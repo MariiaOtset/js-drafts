@@ -467,3 +467,45 @@ const users = [
 // console.log(add.apply(obj, [3, 8]));
 // const fun = add.bind(obj, 7 , 8);
 // console.log(fun());
+
+
+// Створіть клас BankAccount, який має конструктор для зберігання
+// номеру рахунку та балансу.
+// Додайте методи:
+// withdraw - метод для зняття готівки. Отримує в якості аргументу
+// суму готівки котру потрібно зняти. Готівку можна зняти за умови,
+// що баланс більше або дорівнює сумі, котру хоче зняти користувач.
+// Виводить повідомлення: `Знято amount грн. Залишок на рахунку: balance грн.`
+// або "Недостатньо коштів на рахунку."
+// deposit - метод для пововнення балансу. Отримує в якості аргументу
+// суму котру користувач хоче покласти на рахунок.
+// Виводить повідомлення: `Поповнено amount грн. Залишок на рахунку: balance грн.`
+// checkBalance - метод для перевірки балансу.
+// Виводить повідомлення `Залишок на рахунку: balance грн.`
+
+// class BankAccount {
+//     constructor(accountNumber, balance) {
+//         this.accountNumber = accountNumber;
+//         this.balance = balance;
+//     }
+//     withdraw(sum) {
+//         if (sum <= this.balance) {
+//             this.balance -= sum;
+//             return `Знято ${sum} грн. Залишок на рахунку: ${this.balance} грн.`
+//         } else {
+//            return "Недостатньо коштів на рахунку."
+// }
+//     }
+//     deposit(amount) {
+//         this.balance += amount;
+//         return `Поповнено ${amount} грн. Залишок на рахунку: ${this.balance} грн.`
+//     }
+//     checkBalance() {
+//         return `Залишок на рахунку: ${this.balance} грн.`
+//     }
+// }
+// const myAccount = new BankAccount(12, 1000);
+
+// console.log(myAccount.withdraw(500))
+// console.log(myAccount.deposit(200));
+// console.log(myAccount.checkBalance());
