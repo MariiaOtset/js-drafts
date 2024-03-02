@@ -150,7 +150,7 @@
 // console.log(caclculateAverage(1, 2, "world", 3, "hello"))
 
 // Є об'єкт, у якому зберігаються обрані товари у кошику.
-// Напишіть код для визначення загальної суму замовлення 
+// Напишіть код для визначення загальної суму замовлення
 // і збережіть його результат у змінній totalCost.
 // Якщо об'єкт cart порожній, то результат має бути 0.
 
@@ -169,3 +169,301 @@
 //     totalCost += cart[key];
 // }
 // console.log(totalCost)
+
+//function getAllPropValues(propName) {
+//     const products = [
+//         { name: "Radar", price: 1300, quantity: 4 },
+//         { name: "Scanner", price: 2700, quantity: 3 },
+//         { name: "Droid", price: 400, quantity: 7 },
+//         { name: "Grip", price: 1200, quantity: 9 },
+//     ];
+//     let propValues = [];
+
+//     for (let product of products) {
+//         if (product[propName] !== undefined) {
+//             propValues.push(product[propName]);
+//         }
+//     }
+
+//     return propValues;
+// }
+
+// console.log(getAllPropValues("name")); // ["Radar", "Grip", "Scanner"]
+// console.log(getAllPropValues("type"));
+
+// function getExtremeScores(scores) {
+//   const best = Math.max(...scores);
+//   const worst = Math.min(...scores);
+//   return {best, worst};
+// }
+// console.log(getExtremeScores([19, 7, 4, 17, 81, 24]))
+
+
+// const defaultSettings = {
+//   theme: "light",
+//   public: true,
+//   withPassword: false,
+//   minNumberOfQuestions: 10,
+//   timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//   public: false,
+//   withPassword: true,
+//   timePerQuestion: 30,
+// };
+
+/**
+ * ! Module 5
+
+
+// const isEveryUserActive = (users) => {
+//     return users.every(user => user.isActive);
+// }
+//  const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female"
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male"
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female"
+//   }
+// ];
+// console.log(isEveryUserActive(users));
+
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+// const totalAveragePlaytimePerGame = players.reduce((acc, item) => {
+//     const avaragePlayTime = item.playtime / item.gamesPlayed;
+//     return acc + avaragePlayTime;
+
+// }, 0);
+// console.log(totalAveragePlaytimePerGame);
+
+
+/** 
+ ** const calculateTotalBalance = (users) => {
+ return users.reduce((acc, user) => {
+        return acc + user.balance;}, 0);
+};
+const users = [
+    {
+        name: "Moore Hensley",
+        email: "moorehensley@indexia.com",
+        eyeColor: "blue",
+        friends: ["Sharron Pace"],
+        isActive: false,
+        balance: 2811,
+        gender: "male"
+    },
+    {
+        name: "Sharlene Bush",
+        email: "sharlenebush@tubesys.com",
+        eyeColor: "blue",
+        friends: ["Briana Decker", "Sharron Pace"],
+        isActive: true,
+        balance: 3821,
+        gender: "female"
+    },
+    {
+        name: "Ross Vazquez",
+        email: "rossvazquez@xinware.com",
+        eyeColor: "green",
+        friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+        isActive: false,
+        balance: 3793,
+        gender: "male"
+    },
+    {
+        name: "Elma Head",
+        email: "elmahead@omatom.com",
+        eyeColor: "green",
+        friends: ["Goldie Gentry", "Aisha Tran"],
+        isActive: true,
+        balance: 2278,
+        gender: "female"
+    },
+    {
+        name: "Carey Barr",
+        email: "careybarr@nurali.com",
+        eyeColor: "blue",
+        friends: ["Jordan Sampson", "Eddie Strong"],
+        isActive: true,
+        balance: 3951,
+        gender: "male"
+    },
+    {
+        name: "Blackburn Dotson",
+        email: "blackburndotson@furnigeer.com",
+        eyeColor: "brown",
+        friends: ["Jacklyn Lucas", "Linda Chapman"],
+        isActive: false,
+        balance: 1498,
+        gender: "male"
+    },
+    {
+        name: "Sheree Anthony",
+        email: "shereeanthony@kog.com",
+        eyeColor: "brown",
+        friends: ["Goldie Gentry", "Briana Decker"],
+        isActive: true,
+        balance: 2764,
+        gender: "female"
+    }
+]; */
+
+
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books
+//   .filter(books.rating > MIN_BOOK_RATING)
+//   .map(book => book.author)
+//   .toSorted((a, b) => a.author.localeCompare(b.author));
+// console.log(names);
+
+
+
+/* */
+// Practice Module 6
+
+//Напишіть функцію getGirlsPassports() яка поверне масив номерів паспортів дівчат.
+// const friends = [
+//     { passport: '03005988', name: 'Joseph Francis Tribbiani Jr', age: 32, sex: 'm' },
+//     { passport: '03005989', name: 'Chandler Muriel Bing', age: 33, sex: 'm' },
+//     { passport: '03005990', name: 'Ross Eustace Geller', age: 33, sex: 'm' },
+//     { passport: '03005991', name: 'Rachel Karen Green', age: 31, sex: 'f' },
+//     { passport: '03005992', name: 'Monica Geller', age: 31, sex: 'f' },
+//     { passport: '03005993', name: 'Phoebe Buffay', age: 34, sex: 'f' }
+// ]
+
+// function getGirlsPassports() {
+//     return friends.filter(friend => friend.sex === "f")
+//     .map(friend => friend.passport)
+// }
+
+// console.log(getGirlsPassports())
+
+
+//Напишіть функцію getTotalBoysYears() яка порахує загальний вік хлопців.
+
+// function getTotalBoysYears() {
+//     return friends.filter(friend => friend.sex === "m")
+//     .reduce((total, friend) => total + friend.age ,0)
+// }
+
+// console.log(getTotalBoysYears())
+
+
+
+// Завдання:
+// 1. Перевірте, чи всі замовлення виконані.
+// 2. Поверніть список товарів з усіх виконаних замовлень.
+
+// const orders = [
+//   { id: 1, products: ['Milk', 'Bread'], status: 'completed' },
+//   { id: 2, products: ['Eggs', 'Juice'], status: 'processing' },
+//   { id: 3, products: ['Pasta', 'Spices'], status: 'completed' },
+// ];
+
+// const completed = orders.every(order => order.status === "completed")
+// orders.flatMap(order => order.products);
+
+// console.log(completed)
+
+
+// Є об'єкт і функція для підрахунку суми чисел.
+// Виведіть у консоль результат виконання функції, якщо a = 3, b = 5.
+
+// const obj = { num: 2 };
+
+// function add(a, b){
+//   return this.num + a + b;
+// }
+
+// console.log(add.call(obj, 3, 8));
+// console.log(add.apply(obj, [3, 8]));
+// const fun = add.bind(obj, 7 , 8);
+// console.log(fun());
