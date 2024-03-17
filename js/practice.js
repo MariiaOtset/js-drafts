@@ -511,3 +511,129 @@ const users = [
 // console.log(myAccount.checkBalance());
 
 
+
+// Module 8 practice (DOM,destructurisatia, podii)
+
+//task 1
+// При натисканні на кнопку "SHOW ME", потрібно за допомогою alert
+// вивести значення, яке будемо вводити в інпут.
+
+// const btn = document.querySelector("#alertButton");
+// const input = document.querySelector("#alertInput");
+
+// btn.addEventListener("click", onClick);
+
+// function onClick(event) {
+//     alert(input.value);
+// };
+
+//task 2
+// При натисканні на кнопку "Приховати" потрібно введені користувачем
+// символи в інпут відображати у вигляді крапок замість звичайного
+// тексту, а також змінити назву кнопки на "Показати", при повторному
+// натисканні знову будемо відображати символи, а назва кнопки зміниться
+// на "Приховати".
+
+// const btn = document.querySelector("#passwordButton");
+// const input = document.querySelector("#passwordInput");
+
+// btn.addEventListener("click", handleClick);
+// function handleClick(event) {
+//     if (input.type === "text") {
+//         input.type = "password";
+//         btn.textContent = "show";
+//         return;
+//     } input.type = "text";
+// btn.textContent = "hide";
+// }
+
+//task 3
+// Кнопка "Зменшити" повинна зменшувати квадрат на 10 пікселів.
+// Кнопка "Збільшити" повинна збільшувати квадрат на 10 пікселів.
+// const box = document.querySelector("#box");
+// const decrease = document.querySelector("#decrease");
+// const increase = document.querySelector("#increase");
+
+// decrease.addEventListener("click", decreaseBox);
+// increase.addEventListener("click", increaseBox);
+// console.dir(box);
+
+// function decreaseBox(event) {
+//     const { offsetHeight, offsetWidth } = box;
+//     box.style.width = `${offsetWidth - 10}px`;
+//     box.style.height = `${offsetHeight - 10}px`;
+// }
+
+// function increaseBox(event) {
+//     const { offsetHeight, offsetWidth } = box;
+//     box.style.width = `${offsetWidth + 10}px`;
+//     box.style.height = `${offsetHeight + 10}px`;
+// }
+
+
+//task 4
+// При кліку на кнопку "Подвоїти" збільшувати значення в кожному
+// елементі списку в два рази.
+
+// const list = document.querySelectorAll(".listItem");
+// const btn = document.querySelector("#double");
+// btn.addEventListener("click", btnBox);
+
+// function btnBox(event) {
+//     list.forEach(item => item.textContent = item.textContent * 2);
+// }
+
+
+//task 5
+// При кліку на кнопку "Filter" потрібно видалити з списку позначені елементи.
+
+// const form = document.querySelector(".checkboxForm");
+// const checkbox = document.querySelectorAll(".checkboxWrapper");
+// form.addEventListener("submit", handleSubmit);
+
+// function handleSubmit(event) {
+//     event.preventDefault();
+//     const filteredList = [...checkbox].filter(item => item.lastElementChild.checked);
+//     filteredList.forEach(element => element.remove());
+// }
+
+
+//task 6
+// Наведено список людей. Зроби можливість фільтрації (пошуку) за ім'ям або за прізвищем
+
+// const input = document.querySelector(".contactsFilter");
+// const list = document.querySelector(".contacts");
+// const items = [...list.children];
+
+// input.addEventListener("input", change);
+
+// function change(event) {
+//     const value = input.value.toLowerCase().trim();
+//     const filteredItems = items.filter(item => item.textContent.toLowerCase().includes(value));
+//     list.innerHTML = "";
+//     list.append(...filteredItems);
+// }
+
+//task 7
+// Є форма для замовлення продуктів. Вона містить перелік  продуктів,
+// кожен з яких має власний чекбокс та ціну яка зберігається
+// у властивості value. Користувач може вибрати бажані продукти,
+// після натискання кнопки "Додати у кошик" потрібно вивести суму
+// замовлення в спан з ідентифікатором "totalAmount".
+// const form = document.querySelector("#orderForm");
+// const inputForm = document.querySelectorAll(".product-checkbox");
+// const sum = document.querySelector("#totalAmount");
+
+// form.addEventListener("submit", handleSubmit);
+
+// function handleSubmit(event) {
+//     event.preventDefault();
+//     const amount = [...inputForm].filter(item => item.checked).reduce((total, item) => total += parseFloat(item.value), 0);
+//     sum.textContent = amount;
+//     inputForm.forEach(item => {
+//         if (item.checked) {
+//             item.checked = false;
+//         }
+//     })
+// }
+
