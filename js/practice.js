@@ -641,3 +641,134 @@ const users = [
 
 // console.log(_.shuffle([1, 2, 3, 4])); // [4, 1, 3, 2]
 // console.log(_.shuffle([1, 2, 3, 4])); // [3, 2, 1, 4]
+
+
+
+
+// Practice Module 10
+
+// Task 1 30/03/2024
+
+// Додай функціонал зміни теми при натисканні(подія change) на чекбокс
+// #theme-switch-toggle у тулбарі.
+// За замовчуванням тема світла.
+// При зміні теми необхідно додавати на елемент body клас light-theme або dark-theme.
+// Вибрана тема повинна зберігатись між перезавантаженнями сторінки.
+// Для зберігання теми використовуй localStorage.
+// Якщо при завантаженні сторінки тема темна, не забудь поставити властивість checked
+// у чекбоксу #theme -switch-toggle у true, щоб повзунок зрушив у правильне положення.
+// Для зручності зберігання списку використовуй такий перелік.
+
+// const Theme = {
+//   LIGHT: 'light-theme',
+//   DARK: 'dark-theme',
+// };
+
+// const checkbox = document.querySelector(".theme-switch__toggle");
+// const body = document.querySelector("body");
+// checkbox.addEventListener("change", onChange);
+
+
+// function onChange(event) {
+//     if (event.currentTarget.checked) {
+//         body.classList.add(Theme.DARK);
+//         body.classList.remove(Theme.LIGHT);
+//         localStorage.setItem("theme", Theme.DARK);
+//     }
+//     else {
+//         body.classList.add(Theme.LIGHT);
+//         body.classList.remove(Theme.DARK);
+//         localStorage.setItem("theme", Theme.LIGHT);
+//     }
+// }
+// const color = localStorage.getItem("theme");
+// console.log(color);
+// if (color) {
+//     body.classList.add(color);
+// }
+// else {
+//     body.classList.add(Theme.LIGHT);
+// }
+
+// if (color === Theme.DARK) {
+//     checkbox.checked = true;
+// }
+
+
+// Task 2
+// * Якщо імейл і пароль користувача збігаються, при сабміті зберігай дані з форми
+// * у локальне сховище і змінюй кнопку login на logout і роби поля введення
+// * Недоступними для зміни.
+// * При перезавантаженні сторінки, якщо користувач залогінений, ми повинні бачити logout-кнопку
+// * та недоступні для зміни поля з даними користувача.
+// * Клік по кнопці logout повертає все в початковий вигляд і видаляє дані користувача
+// * З локального сховища.
+// *
+// * Якщо введені дані не збігаються з потрібними даними, викликати аlert і
+// * повідомляти про помилку.
+
+// const user = {
+//     email: "world@gmail.com",
+//     pass: "1111"
+// }
+// const form = document.querySelector("#login-form");
+// form.addEventListener("submit", onSubmit);
+
+// function onSubmit(event) {
+//     event.preventDefault();
+
+//     if (JSON.parse(localStorage.getItem("save data"))) {
+//         form.elements.email.disabled = false;
+//         form.elements.password.disabled = false;
+//         form.elements.button.textContent = "login";
+//         form.reset();
+//         localStorage.removeItem("save data");
+//         return;
+//     };
+
+//     if (form.elements.email.value !== user.email || form.elements.password.value !== user.pass) {
+//         alert("Дані введенно не коректно");
+//         return;
+//     } 
+//     const data = {
+//         email: form.elements.email.value,
+//         pass: form.elements.password.value
+//     }
+
+// localStorage.setItem("save data", JSON.stringify(data));
+
+// form.elements.email.disabled = true;
+// form.elements.password.disabled = true;
+
+// form.elements.button.textContent = "logout";
+// };
+
+// const saveData = JSON.parse(localStorage.getItem("save data"));
+// if (saveData) {
+//     form.elements.email.disabled = true;
+//     form.elements.password.disabled = true;
+
+//     form.elements.button.textContent = "logout";
+//     form.elements.email.value = saveData.email;
+//     form.elements.password.value = saveData.pass;
+// }
+// console.log(saveData);
+
+
+// Створіть годинник, який відображає поточний реальний час
+// і оновлюється кожну секунду.Виведіть час у форматі
+// "години:хвилини:секунди" на веб - сторінці.  Поряд з годинником
+// потріно відобразити поточну дату.
+// const clock = document.querySelector("#clock");
+// function updateClock() {
+//     const date = new Date();
+//     const hours = String(date.getHours()).padStart(2, 0);
+//     const minutes = String(date.getMinutes()).padStart(2, 0);
+//     const seconds = String(date.getSeconds()).padStart(2, 0);
+//     const days = String(date.getDate()).padStart(2, 0);
+//     const months = String(date.getMonth()+1).padStart(2, 0);
+//     const years = String(date.getFullYear()).padStart(2, 0);
+//     const dateTime = `${hours}:${minutes}:${seconds} - ${days}.${months}.${years}`;
+//     clock.textContent = dateTime;
+// }
+// setInterval(updateClock, 1000);
