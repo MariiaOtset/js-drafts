@@ -729,7 +729,7 @@ const users = [
 //     if (form.elements.email.value !== user.email || form.elements.password.value !== user.pass) {
 //         alert("Дані введенно не коректно");
 //         return;
-//     } 
+//     }
 //     const data = {
 //         email: form.elements.email.value,
 //         pass: form.elements.password.value
@@ -772,3 +772,5 @@ const users = [
 //     clock.textContent = dateTime;
 // }
 // setInterval(updateClock, 1000);
+
+
